@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SPANISH Travel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+/* Center the text and image */
+#about-spain {
+  text-align: center;
+}
+
+#about-spain img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the paragraph text */
+#about-spain p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #555;
+  padding: 0 20px;
+}
+
+/* Add a border to the section heading */
+#about-spain h3 {
+  border-bottom: 2px solid #ddd;
+}
+
+/* Style the section heading */
+#about-spain h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover effect to the image */
+#about-spain img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+/* Style the section container */
+#about-spain {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+
+/* Section Weather */
+#weather {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#weather h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Weather Search */
+.weather-search {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.weather-search .title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.weather-search-box {
+  display: inline-block;
+  text-align: left;
+}
+
+.weather-search-box select {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.weather-search-box button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.weather-search-box button:hover {
+  background-color: #3e8e41;
+}
+
+/* Weather Result */
+.weather-result {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.weather-result .title {
+margin-top: 0;
+margin-bottom: 20px;
+font-size: 24px;
+font-weight: bold;
+text-transform: uppercase;
+color: #333;
+}
+
+.weather-result-box {
+display: inline-block;
+text-align: left;
+}
+
+.weather-result-box .location {
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+
+.weather-result-box .description {
+margin-top: 10px;
+font-size: 14px;
+color: #555;
+}
+
+.weather-result-box .temperature {
+margin-top: 10px;
+font-size: 36px;
+font-weight: bold;
+color: #333;
+}
+
+.weather-result-box .icon {
+margin-top: 10px;
+}
+
+.weather-result-box img {
+width: 50px;
+height: 50px;
+}
+
+/* Footer */
+footer {
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 20px;
+}
+
+footer p {
+margin: 0;
+}
+
+/* Styling for the 'Foods' section */
+.foods {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section-heading span {
+  color: #ff6f00;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling for the 'Meals' section */
+.meals {
+  padding: 60px 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#meal-form {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#meal-details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.meal-image-container {
+  margin-right: 40px;
+}
+
+.meal-image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.meal-info-container {
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+#meal-name {
+  color: #ff6f00;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#meal-category {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#meal-instructions {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.meal-video-container {
+  margin-top: 20px;
+}
+
+#meal-youtube-link {
+  padding: 8px 16px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+</style>
+
+<body class="w3-light-grey">
+
+  <!-- Navigation Bar -->
+  <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>SPANISH</b> Travel</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="#about" class="w3-bar-item w3-button">About</a>
+          <a href="#city" class="w3-bar-item w3-button">City</a>
+          <a href="#weather" class="w3-bar-item w3-button">Weather Section</a>
+          <a href="#meals" class="w3-bar-item w3-button">Meal Section</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+      <img class="w3-image" src="https://www.belfercenter.org/sites/default/files/styles/shared_image/public/images/publication/feature/AdobeStock_236630558.jpeg?h=152e3acd&itok=QL_eUxAd" alt="Architecture" width="1500" height="800">
+      <div class="w3-display-middle w3-margin-top w3-center">
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>SPANISH</b></span> <span class="w3-hide-small w3-text-light-grey">Travel</span></h1>
+      </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about-spain">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Spain</h3>
+    <img src="https://ychef.files.bbci.co.uk/976x549/p051y4n8.jpg" alt="Spain" style="width:100%;max-width:800px;">
+    <p>Spain is a country located in southwestern Europe on the Iberian Peninsula. It is known for its rich history and culture, vibrant cities, beautiful beaches, delicious cuisine, and lively festivals. Some of the most famous cities in Spain include Madrid, Barcelona, Seville, Valencia, and Granada.</p>
+    <p>The official language of Spain is Spanish, which is spoken by the majority of the population. However, there are also regional languages such as Catalan, Galician, and Basque, which are spoken in different parts of the country.</p>
+    <p>Spain has a Mediterranean climate with hot summers and mild winters, but the northern regions have a cooler, more temperate climate. It is home to several famous landmarks, including the Sagrada Familia in Barcelona, the Alhambra in Granada, and the Prado Museum in Madrid.</p>
+  </div>
+
+  <!-- City Section -->
+  <div class="w3-container w3-padding-32" id="city">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">City</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Madrid</div>
+            <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/madrid-1536x1052.jpg" alt="House" style="width:100%">
+        </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Barcelona</div>
+            <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/barcelona-cities-in-spain-1536x1024.jpg" alt="House" style="width:100%">
+        </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Seville</div>
+            <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/cities-in-spain-seville-1536x1024.jpg" alt="House" style="width:100%">
+        </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Córdoba</div>
+            <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/cordoba-spanish-cities-bridge-1-1536x1024.jpg" alt="House" style="width:100%">
+        </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Valencia</div>
+            <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/cities-in-spain-valencia-1-1536x1030.jpg" alt="House" style="width:100%">
+        </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Granada</div>
+          <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/granada-spain-cities-1536x1025.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Salamanca</div>
+          <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/salamanca-spain-pix-1536x1024.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Malaga</div>
+          <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-939cb5a/images/cities-in-spain-malaga-1536x1024.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Weather Section -->
+  <section id="meals" class="meals" >
+    <div class="container">
+      <div class="weather-wrapper">
+        <div class="weather-search">
+          <h2 class="title">Look out for weather in Spain</h2>
+          <div class="weather-search-box">
+            <select class="search-control" id="search-input">
+              <option value="">Select a city</option>
+              <option value="Madrid">Madrid</option>
+              <option value="Barcelona">Barcelona</option>
+              <option value="Valencia">Valencia</option>
+              <option value="Seville">Seville</option>
+              <option value="Granada">Granada</option>
+              <option value="Granada">Salamanca</option>
+              <option value="Granada">Córdoba</option>
+              <option value="Granada">Malaga</option>
+            </select>
+            <button type="submit" class="search-btn btn" id="search-btn">
+              <i class="fas fa-search"></i>Search
+            </button>
+          </div>
+        </div>
+        <div class="weather-result">
+          <h2 class="title">Your Search Results:</h2>
+          <div id="weather">
+            <div class="weather-item">
+              <div class="weather-name">
+                <h3>City Name</h3>
+              </div>
+              <div class="weather-details">
+                <p>Temperature: <span class="temp"></span></p>
+                <p>Min Temperature: <span class="temp_min"></span></p>
+                <p>Max Temperature: <span class="temp_max"></span></p>
+                <p>Weather: <span class="weather"></span></p>
+                <p>Humidity: <span class="humidity"></span></p>
+                <p>Wind: <span class="wind"></span></p>
+                <p>Pressure: <span class="pressure"></span></p>
+                <p>Sunset: <span class="sunset"></span></p>
+                <p>Sunrise: <span class="sunrise"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Food Section -->
+  <section id="foods" class="foods">
+      <div class="container">
+          <h1 class="section-heading"><span>Spain</span> Best Meal</h1>
+
+
+          <div class="card-wrapper">
+            <div class="card">
+                <div class="overlay">
+                    <span>Seafood fideu</span>
+                    
+                </div>
+                <img src="https://www.themealdb.com/images/media/meals/wqqvyq1511179730.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="overlay">
+                    <span>Roast fennel and aubergine paella</span>
+                    
+                </div>
+                <img src="https://www.themealdb.com/images/media/meals/1520081754.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="overlay">
+                    <span>Spanish Tortilla</span>
+                    
+                </div>
+                <img src="https://www.themealdb.com/images/media/meals/quuxsx1511476154.jpg" alt="">
+            </div>
+          </div>
+      </div>
+  </section>
+
+
+  <!-- Meal Section -->
+  <section id="meals" class="meals">
+      
+    <div class="container">
+        <h2 class="title">Explore more about Spain Meal!</h2>
+      <form id="meal-form">
+        <label for="meal-select">Select a meal:</label>
+        <select id="meal-select" name="meal">
+          <option value="">--Please select--</option>
+        </select><br>
+        <button type="submit">Get Details</button>
+    
+      </form>
+      <div id="meal-details">
+        <div class="meal-image-container"></div>
+        <div class="meal-info-container">
+
+            <img id="meal-image" src="" alt=""><br>
+            <h2>Name:</h2>
+          <h2 id="meal-name"></h2>
+          <h3>type:</h3>
+          <p id="meal-category"></p>
+          <h3>instructions:</h3>
+          <div id="meal-instructions"></div>
+          <div class="meal-video-container">
+            <a id="meal-youtube-link" href="" target="_blank">Watch Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+      
+      <div class="copyright">
+          Copyright 2023 © Nick's Travel
+      </div>
+  </footer>
+
+<script src="spanish.js"></script>
+
+</body>
+</html>
